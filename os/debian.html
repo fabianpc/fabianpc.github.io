@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debian Comos</title>
+</head>
+<body>
+    <h1>Debian Comos</h1>
+    <ul>
+        <li><a href="#sudo">Sudo</a></li>
+    </ul>
+    <hr>
+    <h2 id="sudo">Sudo</h2>
+    <textarea readonly name="sudo" id="" cols="150" rows="50">
+
+Adicionar el usuario actual para utilizar sudo
+-------------------------------------------------------------------------------------------------
+
+Opcion1
+#######
+
+Como superusuario crear un archivo de configuracion extendido con el nombre por ejemplo sudo en el directorio:
+/etc/sudoers.d
+
+Este archivo debe incluir la linea
+usuario    ALL=(ALL) NOPASSWD:ALL
+
+Para probar ejecutar desde el usuario:
+$ sudo whoami
+root
+
+
+Opcion2
+#######
+
+Como superusuario edite el archivo /etc/sudoers (cambie primero el modo del archivo para escritura)
+y añada la siguiente linea:
+
+    usuario    ALL=(ALL) NOPASSWD:ALL
+
+Luego de la linea:
+
+    # Allow members of group sudo to execute any command
+    %sudo   ALL=(ALL:ALL) ALL
+
+(quite el modo de escritura luego de grabar el archivo)    
+De esta forma Ud. esta en capacidad de ejecutar todos los comandos que requieran provilegios de superusuario sin necesidad de 
+ingresar la contraseña.
+
+Si desea que se requiera ingresar la contraseña de administración es necesario remover de la linea ingresada esta instrucción:
+
+    NOPASSWD:ALL
+
+Para probar que la configuracion del usuario esta correcta se requiere ejecutar:
+
+    $ sudo whoami
+
+La respuesta debe ser:
+
+    root
+
+Opcion 3
+########
+
+adduser -g usuario sudo
+
+    </textarea>
+    <footer>
+        <hr>
+        <a href="../howtos.html">Comos</a>
+    </footer>    
+</body>
+</html>
