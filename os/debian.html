@@ -10,6 +10,7 @@
     <h1>Debian Comos</h1>
     <ul>
         <li><a href="#sudo">Sudo</a></li>
+        <li><a href="#apache2">Apache webserver + PHP </a></li>
     </ul>
     <hr>
     <h2 id="sudo">Sudo</h2>
@@ -65,6 +66,69 @@ Opcion 3
 ########
 
 adduser -g usuario sudo
+
+    </textarea>
+    <hr>
+    <h2 id="apache2">Apache Webserver</h2>
+    <textarea readonly name="apache2" id="" cols="150" rows="50">
+    $ sudo apt update
+    $ sudo apt install apache2
+    $ systemctl status apache2
+        ● apache2.service - The Apache HTTP Server
+        ...
+        Active: active (running)
+    To stop your web server, type:
+    $ sudo systemctl stop apache2
+
+    To start the web server when it is stopped, type:
+    $ sudo systemctl start apache2
+    
+    To stop and then start the service again, type:
+    $ sudo systemctl restart apache2
+    
+    If you are simply making configuration changes, Apache can often reload
+    without dropping connections. To do this, use this command:
+    $ sudo systemctl reload apache2
+    
+    By default, Apache is configured to start automatically when the server boots. If
+    this is not what you want, disable this behavior by typing:
+    $ sudo systemctl disable apache2
+    
+    To re-enable the service to start up at boot, type:
+    $ sudo systemctl enable apache2
+    
+    -------------------------------------------------------------------------------------------------
+    Configurar para desarrollo
+
+    $ sudo nano /etc/apache2/apache2.conf
+      ...
+      <Directory /var/www/>      --> cambiar al directorio de trabajo del usuario
+
+    $ sudo nano /etc/apache2/envvars
+      ...
+      export APACHE_RUN_USER=www-data                --> cambiar www-data por el usuario 
+      export APACHE_RUN_GROUP=www-data               --> cambiar www-data por el usuario
+
+    $ sudo nano /etc/apache2/sites-available/000-default.conf
+      ...
+      #ServerName                    --> habilitar y cambiar por localhost
+      DocumentRoot /var/www/html     --> cambiar al directorio de trabajo
+    
+    $ sudo systemctl restart apache2
+
+    -------------------------------------------------------------------------------------------------
+    PHP
+
+    $ sudo apt install php libapache2-mod-php
+
+    $ php --version
+
+    Para realizar la prueba incluir un archivo test.php en el directorio de trabajo con el siguiente 
+    contenido:
+
+    <?php
+        phpinfo();
+    ?>
 
     </textarea>
     <footer>
