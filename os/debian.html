@@ -11,6 +11,7 @@
     <ul>
         <li><a href="#sudo">Sudo</a></li>
         <li><a href="#apache2">Apache webserver + PHP </a></li>
+        <li><a href="#epsonl355">Impresora Epson L355</a></li>
     </ul>
     <hr>
     <h2 id="sudo">Sudo</h2>
@@ -131,6 +132,45 @@ adduser -g usuario sudo
     ?>
 
     </textarea>
+    <hr>
+    <h2 id="epsonl355">Impresora Epson L355</h2>
+    <textarea readonly name="sudo" id="" cols="150" rows="50">
+        1. Verifique la compatibilidad con linux en http://www.openprinting.org/printer/Epson
+        /Epson-L355_Series
+
+        2. Luego descargue los controladores bajandolos del sitio:
+        http://download.ebz.epson.net/dsc/search/01/search/searchModule (la busqueda:
+        modelo L355, S.O.: Linux)
+        (ver imagen)
+        Los archivos que descargue son:
+        epson-inkjet-printer-201207w_1.0.0-1lsb3.2_amd64.deb    (09-18-2012)
+        epson-printer-utility_1.1.1-1lsb3.2_amd64.deb      (11-22-2021)  
+        iscan-bundle-2.30.4.x64.deb.tar.gz (08-22-2019 - scanner) 
+       
+        3. Instalar las aplicaciones para impresion:
+        -------------------------------------------------------$ sudo apt-get install lsb
+        $ sudo apt-get install cups
+        Debian 9
+        $ sudo apt-get install lsb
+        Debian 10 y 11
+        http://http.us.debian.org/debian/pool/main/l/lsb/lsb-compat_9.20161125_amd64.deb
+        $ sudo dpkg -i lsb-compat_9.20161125_amd64.deb
+        (en el caso de que se presente problemas con alguna dependencia utilizar: 
+         $ sudo apt --fix-broken install)
+
+        4. Instalar los controladores de la impresora descargados:
+        $ sudo dpkg -i epson-inkjet-printer-201207w_1.0.0-1lsb3.2_amd64.deb
+        $ sudo dpkg -i epson-printer-utility_1.1.1-1lsb3.2_amd64.deb
+
+        5. Instalar los controladores del scanner descargados:
+        $ tar zxvf iscan-bundle-2.30.4.x64.deb.tar.gz
+        $ cd iscan-bundle-2.30.4.x64.deb
+        $ sudo sh install.sh
+
+        Finalmente encendí la impresora y ejecute la opcion grafica (settings) de instalacion de
+        impresoras y mande a ejecutar la pagina de prueba.
+
+    </textarea>           
     <footer>
         <hr>
         <a href="../howtos.html">Comos</a>
