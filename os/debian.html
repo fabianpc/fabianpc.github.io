@@ -12,6 +12,7 @@
         <li><a href="#sudo">Sudo</a></li>
         <li><a href="#apache2">Apache webserver + PHP </a></li>
         <li><a href="#epsonl355">Impresora Epson L355</a></li>
+        <li><a href="#virtualbox">VirtualBox</a></li>
     </ul>
     <hr>
     <h2 id="sudo">Sudo</h2>
@@ -170,6 +171,25 @@ adduser -g usuario sudo
         Finalmente encendí la impresora y ejecute la opcion grafica (settings) de instalacion de
         impresoras y mande a ejecutar la pagina de prueba.
 
+        Tambien puede comprobar el escaneo de documentos o imagenes con Simple/Document Scan.
+
+    </textarea>
+    <hr>
+    <h2 id="virtualbox">VirtualBox</h2>
+    <textarea readonly name="virtualbox" id="" cols="150" rows="50">
+        Descargar el instalador debian 11:
+        https://download.virtualbox.org/virtualbox/6.1.30/virtualbox-6.1_6.1.30-148432~Debian~bullseye_amd64.deb
+        
+        
+        $ sudo dpkg -i virtualbox-6.1_6.1.30-148432_Debian_bullseye_amd64.deb
+        $ sudo apt --fix-broken install
+        
+        En este punto me indica que faltan archivos para la construccion de modulos
+        
+        $ sudo apt install gcc make perl                                          (puede resultar que ya estan instalados)
+        $ sudo apt install linux-headers-$(uname -r)
+        
+        Si se produce un error en la configuracion de vbox ingresar con el superusuario y ejecutar /sbin/vboxconfig        
     </textarea>           
     <footer>
         <hr>
