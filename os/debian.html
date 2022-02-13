@@ -13,6 +13,8 @@
         <li><a href="#apache2">Apache webserver + PHP </a></li>
         <li><a href="#epsonl355">Impresora Epson L355</a></li>
         <li><a href="#virtualbox">VirtualBox</a></li>
+        <li><a href="#snap">SNAP</a></li>
+        <li><a href="#nettools">Net tools</a></li>
     </ul>
     <hr>
     <h2 id="sudo">Sudo</h2>
@@ -190,7 +192,43 @@ adduser -g usuario sudo
         $ sudo apt install linux-headers-$(uname -r)
         
         Si se produce un error en la configuracion de vbox ingresar con el superusuario y ejecutar /sbin/vboxconfig        
-    </textarea>           
+    </textarea>
+    <hr>
+    <h2 id="snap">SNAP</h2>
+    <textarea readonly name="snap" id="" cols="150" rows="50">
+        Instalar debian 11:
+        $ sudo apt-get install snapd       (se sugiere tambien $ snap install core core18)
+        Para listar programas instalados    
+        $ snap list
+        Para buscar
+        $ snap find [keyword]
+        Para buscar informacion 
+        $ snap info [package_name]
+        Para instalar: 
+        $ snap install [package_name]
+        Para desintalar:
+        $ snap remove [package_name]
+
+        Ejemplo: 
+        Para instalar el cliente de heroku
+
+        $ sudo snap install --classic heroku
+
+    </textarea> 
+    
+    <hr>
+    <h2 id="nettools">Net Tools</h2>
+    <textarea readonly name="nettools" id="" cols="150" rows="50">
+        Instalar las herramientas:
+        $ sudo apt install net-tools
+        Para identificar la ruta en donde se instalan se requiere agregar en el .bashrc
+        export PATH=/usr/sbin:$PATH
+        (nota: esta ruta habilita a muchos programas de administracion)
+        $ source .bashrc
+        Uso de las herramientas
+        $ ifconfig
+        $ route
+    </textarea>          
     <footer>
         <hr>
         <a href="../howtos.html">Comos</a>
