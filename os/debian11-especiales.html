@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debian 11 especiales</title>
+</head>
+<body>
+    <h1>Debian 11 especiales</h1>
+    <ul>
+        <li><a href="#diswayland">disable Wayland and enable Xorg</a></li>
+    </ul>
+    <hr>
+    <h2 id="diswayland">disable Wayland and enable Xorg</h2>
+    <textarea readonly name="diswayland" id="" cols="150" rows="50">
+        Este cambio es necesario porque algunos programas de comparticion de pantalla como google
+        meet o teamviewer que cuando se presenta la pantalla sale en negro.
+
+        $ sudo vi /etc/gdm3/daemon.conf
+        Eliminar el # de la linea #WaylandEnable=false
+
+        Reiniciar y probar.
+    </textarea>          
+    <footer>
+        <hr>
+        <a href="../howtos.html">Comos</a>
+    </footer>    
+</body>
+</html>
