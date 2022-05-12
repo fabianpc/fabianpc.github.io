@@ -7,23 +7,42 @@
     <title>Debian Comos</title>
 </head>
 <body>
-    <h1>Debian Comos</h1>
+    <h1>NodeJS</h1>
     <ul>
-        <li><a href="#install">Instalacion Debian 11</a></li>
+        <li><a href="#install">Instalacion/Desinstalacion Debian 11</a></li>
+        <li><a href="#update">Actualizacion Debian 11</a></li>
     </ul>
     <hr>
-    <h2 id="install">Instalacion</h2>
+    <h2 id="install">Instalacion/Desinstalacion</h2>
     <textarea readonly id="" cols="150" rows="10">
         $ sudo apt update
         $ sudo apt install nodejs npm
         
         Para verificar
         $ node -v
-        v10.21.0
+        v18.1.0
         
         $ npm -v
-        5.8.0
+        npm WARN config init.author.email Use `--init-author-email` instead.
+        npm WARN config init.author.name Use `--init-author-name` instead.
+        npm WARN config init.license Use `--init-license` instead.
+        8.8.0
+
+        $ sudo apt remove nodejs npm --purge
+
+        Para instalar una version especifica, solo instalar npm y luego ejecutar:
+        $ sudo npm install -g node@16.10.0 --force
     </textarea>
+    <h2 id="update">Actualizacion</h2>
+    <textarea readonly id="" cols="150" rows="10">
+        $ sudo n latest
+        $ node -v
+        v18.1.0
+
+        $ sudo npm install -g npm@latest
+        $ npm -v
+        5.8.0
+    </textarea>    
     <footer>
         <hr>
         <a href="../programming.html">Lenguajes de Programacion</a>
