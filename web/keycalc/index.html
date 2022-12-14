@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>keycalc</title>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="panel1">
+            <div class="output">
+                <div data-previous-operand class="previous-operand"></div>
+                <div data-current-operand class="current-operand"></div>
+            </div>
+            <div class="keyboard">
+                <div class="keyboard__row">
+                    <div class="key--word" data-key="144">
+                        <span>Num Lock</span>
+                    </div>
+                    <div class="key--numpad operator" data-key="111">/</div>
+                    <div class="key--numpad operator" data-key="106">*</div>
+                    <div class="key--numpad operator" data-key="109">-</div>
+                </div>
+
+                <div class="keyboard__row">
+                    <div class="key--numpad number" data-key="103">7</div>
+                    <div class="key--numpad number" data-key="104">8</div>
+                    <div class="key--numpad number" data-key="105">9</div>
+                    <div class="key--numpad key--vlong operator" data-key="107">+</div>
+                </div>
+
+                <div class="keyboard__row">
+                    <div class="key--numpad number" data-key="100">4</div>
+                    <div class="key--numpad number" data-key="101">5</div>
+                    <div class="key--numpad number" data-key="102">6</div>
+                </div>
+
+                <div class="keyboard__row">
+                    <div class="key--numpad number" data-key="97">1</div>
+                    <div class="key--numpad number" data-key="98">2</div>
+                    <div class="key--numpad number" data-key="99">3</div>
+                    <div class="key--word key--vlong" data-key="13">
+                        <span>Enter</span>
+                    </div>
+                </div>
+                <div class="keyboard__row">
+                    <div class="key--numpad key--hlong" data-key="96">0</div>
+                    <div class="key--numpad" data-key="110">.</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel2">
+            <textarea class="paper" readonly>
+            </textarea>
+        </div>
+    </div>
+    <script src="keycalc.js"></script>
+</body>
+
+</html>

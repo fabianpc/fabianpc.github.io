@@ -1,0 +1,39 @@
+h1 {
+  color: white;
+  background-color: darkgreen;
+}
+
+h2 {
+  background-color: #8FBC8F;
+}
+
+textarea {
+    font-family: 'Courier Prime', monospace;
+    color: green;
+    background-color: black;
+    padding: 1rem 1rem;
+    height: 200px;
+    width: 90%;
+    resize: none;
+}
+
+.cabecera {
+  background-image: url(../img/git-logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.tema1 {
+  background-color: #8FBC8F;
+  padding: 20px;
+}
+
+.tema2 {
+  background-color: #BDB76B;
+  padding: 20px;
+}
+
+.pie {
+  padding: 20px;
+}

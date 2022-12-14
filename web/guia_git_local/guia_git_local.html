@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Guia local de git</title>
+  <link href="https://fonts.googleapis.com/css?family=Courier+Prime:700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <div class="cabecera">
+    <h1>Guia local de git<h1>
+        <h2>Funcionamiento basico</h2>
+        <p>
+          Los archivos se mueven dentro de tres zonas de trabajo:
+          <ul>
+            <li>Carpeta de trabajo (Working)</li>
+            <li>Area de ensayo (Stage)</li>
+            <li>Repositorio (Head)</li>
+          </ul>
+          <p>Este es el esquema de funcionamiento:
+            </br><img src="img/git-basico.png">
+          </p>
+  </div>
+
+  <div class="tema1">
+    <h2>Inicia un repositorio</h2>
+    <p>Ubicate en la carpeta de inicio</p>
+    <div class="term">
+      $ cd
+    </div>
+    <p>Crea una carpeta para los archivos fuente</p>
+    <div class="term">
+      $ mkdir aplicacion
+    </div>
+    <p>Ingresa a la carpeta creada</p>
+    <div class="term">
+      $ cd aplicacion
+    </div>
+    <p>Inicializa el repositorio</p>
+    <div class="term">
+      $ git init
+    </div>
+
+  </div>
+  <!--iniciar un repositorio-->
+
+  <div class="tema2">
+
+
+    <h2>Operaciones basicas en un repositorio</h2>
+    <p>Crea un archivo de texto con el contenido inicial</p>
+    <div class="term">
+      $ echo 'El amor en los tiempos del colera' > libro.txt
+    </div>
+    <p>Verificar el estado del repositorio</p>
+    <div class="term">
+      $ git status
+    </div>
+
+    <p>Registrar en el area de ensayo</p>
+    <div class="term">
+      $ git add libro.txt
+    </div>
+    <p>Verificar el nuevo estado del repositorio</p>
+    <div class="term">
+      $ git status
+    </div>
+    <p>Registrar los cambios en el repositorio</p>
+    <div class="term">
+      $ git commit -m "iniciar con el titulo del libro"
+    </div>
+
+  </div> <!-- operaciones basicas -->
+
+  <div class="tema1">
+
+
+    <h2>Crear otra rama del repositorio</h2>
+    <p>Crear una nueva rama y ubicarse en ella</p>
+    <div class="term">
+      $ git checkout -b multidioma
+    </div>
+    <p>Modificar el archivo incluyendo una nueva linea del titulo en ingles</p>
+    <div class="term">
+      $ echo 'Love in the times of cholera' >> libro.txt
+    </div>
+    <p>Regresar a la rama principal</p>
+    <div class="term">
+      $ git checkout master
+    </div>
+    <p>Clona el repositorio ($HOME significa tu carpeta de inicio)</p>
+    <div class="term">
+      $ git clone $HOME/aplicacion
+    </div>
+    <p>Si deseas que el clon del repositorio tenga otro nombre</p>
+    <div class="term">
+      $ git clone $HOME/aplicacion clonaplicacion
+    </div>
+    <p>Verifica el resultado de las dos instrucciones anteriores</p>
+    <div class="term">
+      $ ls -l
+    </div>
+  </div> <!-- crear otra rama -->
+
+  <div class="tema2">
+    <h2>Clonar un repositorio</h2>
+    <p>Ubicate en la carpeta de inicio</p>
+    <div class="term">
+      $ cd
+    </div>
+    <p>Crea una carpeta de trabajo</p>
+    <div class="term">
+      $ mkdir trabajo
+    </div>
+    <p>Ingresa a la carpeta creada</p>
+    <div class="term">
+      $ cd trabajo
+    </div>
+    <p>Clona el repositorio ($HOME significa tu carpeta de inicio)</p>
+    <div class="term">
+      $ git clone $HOME/aplicacion
+    </div>
+    <p>Si deseas que el clon del repositorio tenga otro nombre</p>
+    <div class="term">
+      $ git clone $HOME/aplicacion clonaplicacion
+    </div>
+    <p>Verifica el resultado de las dos instrucciones anteriores</p>
+    <div class="term">
+      $ ls -l
+    </div>
+  </div> <!-- clonar un repositorio -->
+
+  <div class="tema1">
+
+    <h2>Descarga de cambios del repositorio principal</h2>
+    <p>Ubicate en la carpeta de repositorio inicial</p>
+    <div class="term">
+      $ cd $HOME/aplicacion
+    </div>
+    <p>Crea un archivo nuevo</p>
+    <div class="term">
+      $ echo 'Revista Software en Latinoamerica' > revista.txt
+    </div>
+    <p>Registra en el area de ensayo</p>
+    <div class="term">
+      $ git add revista.txt
+    </div>
+    <p>Registra los cambios en el repositorio</p>
+    <div class="term">
+      $ git commit -m "creacion de la primera revista"
+    </div>
+    <p>Cambia a la carpeta del clone con otro nombre</p>
+    <div class="term">
+      $ cd $HOME/trabajo/clonaplicacion
+    </div>
+    <p>Revisa los archivos que constan en la carpeta</p>
+    <div class="term">
+      $ ls -l
+    </div>
+    <p>Actualiza tu repositorio clone con el repositorio inicial</p>
+    <div class="term">
+      $ git pull
+    </div>
+    <p>Revisa los archivos que constan en la carpeta (debe constar el nuevo archivo revista)</p>
+    <div class="term">
+      $ ls -l
+    </div>
+  </div> <!-- clonar un repositorio -->
+  <div class="tema2">
+
+    <h2>Subir cambios al repositorio principal</h2>
+    <p>Cambia el contenido del archivo revista.txt</p>
+    <div class="term">
+      $ echo 'Revista SOFTWARE LIBRE en Latinoamerica' > revista.txt
+    </div>
+    <p>Verificar el estado del repositorio</p>
+    <div class="term">
+      $ git status
+    </div>
+    <p>Registra en el area de ensayo (el punto representa todos los archivos creados o cambiados)</p>
+    <div class="term">
+      $ git add .
+    </div>
+    <p>Registra los cambios en el repositorio</p>
+    <div class="term">
+      $ git commit -m "cambiamos el titulo de la revista"
+    </div>
+    <p>Subamos los cambios al repositorio inicial (rama maestra)</p>
+    <div class="term">
+      $ git push
+    </div>
+  </div> <!-- subir cambios al repsositorio principal -->
+
+  <div class="pie">
+    <img src="img/cc.png">
+    <p>Fabian Palacios - fabianpc@gmail.com</p>
+  </div>
+</body>
+
+</html>
