@@ -11,6 +11,7 @@
     <h1>Debian 11 especiales</h1>
     <ul>
         <li><a href="#diswayland">disable Wayland and enable Xorg</a></li>
+        <li><a href="#snx">cliente VPN para CheckPoint</a></li>
     </ul>
     <hr>
     <h2 id="diswayland">disable Wayland and enable Xorg</h2>
@@ -22,7 +23,40 @@
         Eliminar el # de la linea #WaylandEnable=false
 
         Reiniciar y probar.
-    </textarea>          
+    </textarea>  
+    <hr>
+    <h2 id="snx">cliente VPN para CheckPoint</h2>
+    <textarea readonly name="diswayland" id="" cols="150" rows="50">
+        Solución sin soporte para conectarse a VPN que usa Checkpoint.
+        Descargar el instalador desde:
+        https://supportcenter.checkpoint.com/supportcenter/portal/user/anon/page/default.psml/media-type/html?action=portlets.DCFileAction&eventSubmit_doGetdcdetails&fileid=22824
+
+        Habilitar librerias de arquitectura i386
+
+        $ sudo dpkg --add-architecture i386
+        $ sudo apt update
+
+        Instalar librerias
+
+        $ sudo apt install libstdc++5:i386 libpam0g:i386 libx11-6:i386
+
+        Instalar el cliente
+
+        $ chmod +x snx_install_linux30.sh
+        $ sudo ./snx_install_linux30.sh
+        Installation successfull
+
+        Probar la conexion.
+
+        $ snx -u nombreusuario -s vpn.acceso.com
+
+        (colocar el password, aceptar y ya estas conectado)
+
+        Para desconectar:
+
+        $ snx -d
+    </textarea>  
+    <hr>
     <footer>
         <hr>
         <a href="../howtos.html">Comos</a>
