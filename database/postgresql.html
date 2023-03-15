@@ -20,7 +20,8 @@
 
         $ sudo apt search postgresql                    (opcional)
         
-        $ sudo apt install postgresql-13		(instala tambien el cliente)
+        # Install the latest version of PostgreSQL   (para intalar una version en particular Ej.version 13  postgresql-13)
+        $ sudo apt install postgresql		(instala tambien el cliente)
         
         $ pg_isready 
         /var/run/postgresql:5432 - accepting connections
@@ -47,12 +48,14 @@
         $ su - postgres
         $ psql -c "ALTER USER postgres WITH PASSWORD 'contraseña_segura';"     
         (tambien se puede cambiar con psql --> postgres=# \password postgres)
-        $ sudo vi /etc/postgresql/11/main/pg_hba.conf             
+        $ exit
+        
+        $ sudo vi /etc/postgresql/13/main/pg_hba.conf             
           Cambiar en la linea peer por md5
           # "local" is for Unix domain socket connections only
           local   all             all                                     md5
         
-        $ systemctl restart postgresql
+        $ sudo systemctl restart postgresql
         
         ####### creacion de la base de datos
         

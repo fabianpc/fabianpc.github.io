@@ -20,10 +20,11 @@
         Instalacion:
         El momento de cargar los fuentes en PYCHARM me crea el ambiente con las librerias necesarias iniciales
         
-        ./setup.py install
+        sudo ./setup.py install    (permisos)
         pip install psycopg2-binary
         
         ======================================================================================================
+        cambiarse al directorio en donde esta trytond
         bin/trytond -c config.ini
         
         ======================================================================================================
@@ -51,6 +52,30 @@
         Para activar el cliente SAO
         ---------------------------
         
+        Prerequisites
+        -------------
+        
+         * Node.js 0.8.0 or later (http://nodejs.org/)
+
+         $ sudo apt install nodejs npm
+         $ sudo apt install grunt
+        
+        Installation
+        ------------
+        
+        Once you've downloaded and unpacked the sao source release, enter the directory
+        where the archive was unpacked, and run:
+        
+            $ npm install --production --legacy-peer-deps
+        
+        Development
+        ...........
+        
+        For development, you have to run instead:
+        
+            $ npm install --legacy-peer-deps
+            $ grunt dev
+
         Se tiene que incorporar el directorio en donde esta la aplicacion 
         
         [web]
