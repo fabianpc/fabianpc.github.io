@@ -16,6 +16,7 @@
         <li><a href="#virtualbox">VirtualBox</a></li>
         <li><a href="#snap">SNAP</a></li>
         <li><a href="#nettools">Net tools</a></li>
+        <li><a href="#docker">Docker</a></li>
     </ul>
     <hr>
     <h2 id="sudo">Sudo</h2>
@@ -234,7 +235,29 @@ adduser -g usuario sudo
         Uso de las herramientas
         $ ifconfig
         $ route
-    </textarea>          
+    </textarea>
+    <hr>
+    <h2 id="docker">Instalacion de Docker</h2>
+    <textarea readonly name="docker" id="" cols="150" rows="50">
+        $ sudo apt update
+        $ sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+        
+        $ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+        $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+        
+        $ sudo apt update
+        $ apt-cache policy docker-ce
+        
+        $ sudo apt install docker-ce
+        
+        Para que no sea necesario usar sudo (se requiere reiniciar el SO)
+        
+        $ sudo usermod -aG docker ${USER}
+
+        Para probar (no se requiere sudo si la instruccion anterior fue aplicada)
+
+        $ sudo docker run hello-world
+    </textarea>            
     <footer>
         <hr>
         <a href="../howtos.html">Comos</a>
