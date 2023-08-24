@@ -17,6 +17,7 @@
         <li><a href="#snap">SNAP</a></li>
         <li><a href="#nettools">Net tools</a></li>
         <li><a href="#docker">Docker</a></li>
+        <li><a href="#nginx">Nginx + PHP-fpm</a></li>
     </ul>
     <hr>
     <h2 id="sudo">Sudo</h2>
@@ -257,7 +258,24 @@ adduser -g usuario sudo
         Para probar (no se requiere sudo si la instruccion anterior fue aplicada)
 
         $ sudo docker run hello-world
-    </textarea>            
+    </textarea>
+    <hr>
+    <h2 id="nginx">Instalacion de Nginx + PHP</h2>
+    <textarea readonly name="nginx" id="" cols="150" rows="50">
+        $ sudo apt-get upgrade -y
+        $ sudo apt-get update -y
+        $ sudo apt-get install nginx -y
+        $ sudo systemctl status nginx
+        $ sudo apt-get install php8.1-fpm -y
+        $ sudo systemctl status php8.1-fpm
+        $ sudo nano /etc/nginx/sites-available/default
+        $ sudo nginx -t
+        $ sudo systemctl restart nginx
+        $ sudo chmod -R 777 /var/www/html
+        $ echo "<?php phpinfo(); ?>" >> /var/www/html/info.php
+
+        Nota: algunas variantes se aplicaron para instalar en el droplet DO
+    </textarea>                 
     <footer>
         <hr>
         <a href="../howtos.html">Comos</a>
