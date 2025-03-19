@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -32,34 +31,14 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
-
-<body class="sub_page">
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="menuContainer"></div>
-    </header>
-    <!-- end header section -->
-
-  </div>
-
-  <!-- contact section -->
-  <div class="contactContainer"></div>
-  <!-- end info section -->
-
-  <!-- footer section -->
-  <div class="footerContainer"></div>
-  <!-- footer section -->
-
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-
+<body>
+    <h1>Comos</h1>
+    <ul>
+        <li><a href="database/postgresql.html">Postgresql</a></li>
+        <li><a href="database/mysql.html">MySql (MariaDB)</a></li>
+        <li><a href="os/debian.html">Debian</a></li>
+        <li><a href="os/debian11-especiales.html">Especiales Debian 11</a></li>
+    </ul>
+    <footer><a href="../kb.html">Inicio</a></footer>    
 </body>
-<script>
-  $(document).ready(function () {
-    $('.menuContainer').load('./menu.html');
-    $('.footerContainer').load('./footer.html');
-    $('.contactContainer').load('./contact-part.html');
-  });
-</script>
 </html>
