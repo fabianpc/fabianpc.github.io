@@ -15,51 +15,81 @@
     <hr>
     <h2 id="install"></h2>
     <textarea>
-        SERVER TRYTOND
-        --------------
-        Instalacion:
-        El momento de cargar los fuentes en PYCHARM me crea el ambiente con las librerias necesarias iniciales
-        
-        sudo ./setup.py install    (permisos)
-        pip install psycopg2-binary
-        
-        ======================================================================================================
+TRYTON
+--------------
+Obtener los fuentes del repositorio oficial:
+    hg clone https://foss.heptapod.net/tryton/tryton
+
+    Nota: Existe un espejo en github: 
+        git clone https://github.com/tryton/tryton.git
+
+Requerimientos:
+    python 3.10
+    postgresql
+    nodejs
+
+Creo y activo el ambiente virtual:
+    python -m venv tryton-env
+    source tryton-env/bin/activate  
+
+Instalo las dependencias:
+    .hooks/update_requirements
+    .hooks/link_modules
+    python -m pip install --upgrade pip
+    pip install -e trytond -e tryton -e proteus -r requirements.txt -r requirements-dev.txt
+
+
+Crear el archivo de configuracion y modificarlo:
+
         cambiarse al directorio en donde esta trytond
-        bin/trytond -c config.ini
-        
-        ======================================================================================================
-        Configuracion: config.ini
+        Configuracion: trytond.conf
         +-----------------------------------------------------------------------------------------------------------------------+
         | [database]														|
         | uri = postgresql://developer:s3cret0@localhost:5432/trytonerp								|
         |															|
         | [web]															|
-        | root = /home/fabianpc/Workspace/TRYTON/sao										|
+        | root = /home/fabianpc/Workspace/tryton/sao										|
         +-----------------------------------------------------------------------------------------------------------------------+
+                
+Inicilizar la base de datos (aplicar la misma instruccion para actualizar)
         
-        Nota: todos los datos de la configuracion se pueden suplir con variables de ambiente de esta forma:
-        export TRYTOND_DATABASE_URI='postgresql://developer:s3cret0@localhost:5432/trytonerp'
+        bin/trytond-admin -c trytond.conf -d trytonerp --all
+
+Ejecutar el servidor:
+
+        bin/trytond -c trytond.conf
         
-        [TRYTOND]_[seccion]_[variable]
-        ======================================================================================================
-        
-        Inicilizar la base de datos (aplicar la misma instruccion para actualizar)
-        
-        bin/trytond-admin -c config.ini -d trytonerp --all
-        
-        #########################################################################################################################
-        
-        Para activar el cliente SAO
-        ---------------------------
+======================================================================================================
+Nota: todos los datos de la configuracion se pueden suplir con variables de ambiente de esta forma:
+export TRYTOND_DATABASE_URI='postgresql://developer:s3cret0@localhost:5432/trytonerp'
+ 
+[TRYTOND]_[seccion]_[variable]
+======================================================================================================
+
+
+Para activar el cliente SAO
+---------------------------
         
         Prerequisites
         -------------
-        
-         * Node.js 0.8.0 or later (http://nodejs.org/)
+                
+        # Download and install nvm:
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
-         $ sudo apt install nodejs npm
-         $ sudo apt install grunt
-        
+        # in lieu of restarting the shell
+        \. "$HOME/.nvm/nvm.sh"
+
+        # Download and install Node.js:
+        nvm install 22
+
+        # Verify the Node.js version:
+        node -v # Should print "v22.15.0".
+        nvm current # Should print "v22.15.0".
+
+        # Verify npm version:
+        npm -v # Should print "10.9.2".
+
+       
         Installation
         ------------
         
@@ -83,7 +113,7 @@
         
         Luego de reiniciar el servidor se arranca la pagina inicial index.html (maravilla)
         
-        #########################################################################################################################
+#########################################################################################################################
         
         
         Para la compilacion del cliente tryton:
