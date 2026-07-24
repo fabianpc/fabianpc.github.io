@@ -1,71 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-  <title>fabianpc.github.io</title>
+    <title>fabianpc.github.io</title>
 
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+    <!-- slider stylesheet -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"
+    />
 
+    <!-- font wesome stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
 
-  <!-- font wesome stylesheet -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-</head>
-<body class="sub_page">  
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+  </head>
+  <body class="sub_page">
     <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="menuContainer"></div>
-    </header>
-    <!-- end header section -->
-  </div>
-    <h1>Base de Conocimientos</h1>
-    <h2>Soporte</h2>
-    <ul>
-        <li>Comos (<a href="kb/howtos.html">howtos</a>)</li>
-        <li>Lenguajes de programacion (<a href="kb/programming.html">programming languages</a>)</li>
-    </ul>
-    <h2>Desarrollo WEB</h2>
-    <ul>
-        <li>Guia local de GIT (<a href="kb/web/guia_git_local/guia_git_local.html">git</a>)</li>
-        <li>Teclado calculadora (<a href="kb/web/keycalc/index.html">keycalc</a>)</li>
-    </ul>    
-    <h2>Aplicaciones</h2>
-    <ul>
-        <li>TRYTON (<a href="kb/apps/tryton.html">tryton</a>)</li>
-    </ul>       
-  <!-- footer section -->
-  <div class="footerContainer"></div>
-  <!-- footer section -->
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="menuContainer"></div>
+      </header>
+      <!-- end header section -->
+    </div>
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+    <div class="body_bg layout_padding">
+      <section class="kb_section">
+        <div class="container">
+          <div class="heading_container">
+            <h2>Base de Conocimientos</h2>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="box">
+                <h4>Soporte</h4>
+                <ul>
+                  <li>Comos (<a href="kb/howtos.html" target="_blank">howtos</a>)</li>
+                  <li>
+                    Lenguajes de programacion (<a href="kb/programming.html"
+                      >programming languages</a
+                    >)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div
+                class="box align-items-end align-items-md-start text-right text-md-left"
+              >
+                <h4>Desarrollo WEB</h4>
+                <ul>
+                  <li>
+                    Guia local de GIT (<a
+                      href="kb/web/guia_git_local/guia_git_local.html"
+                      >git</a
+                    >)
+                  </li>
+                  <li>
+                    Teclado calculadora (<a href="kb/web/keycalc/index.html"
+                      >keycalc</a
+                    >)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="box">
+                <h4>Aplicaciones</h4>
+                <ul>
+                  <li>TRYTON (<a href="kb/apps/tryton.html">tryton</a>)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
-</body>
-<script>
-  $(document).ready(function () {
-    $('.menuContainer').load('./menu.html');
-    $('.footerContainer').load('./footer.html');
-  });
+    <!-- footer section -->
+    <div class="footerContainer"></div>
+    <!-- footer section -->
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script>
+let myWindow;
+
+function openWin(page) {
+  myWindow = window.open(page, "_blank");
+}
+
 </script>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $(".menuContainer").load("./menu.html");
+      $(".footerContainer").load("./footer.html");
+    });
+  </script>
 </html>

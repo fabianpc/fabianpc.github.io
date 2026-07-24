@@ -38,6 +38,16 @@ Instalo las dependencias:
     python -m pip install --upgrade pip
     pip install -e trytond -e tryton -e proteus -r requirements.txt -r requirements-dev.txt
 
+    Nota:
+            Alternative Solution (Pinning PyGObject Version)
+            If you are on an older operating system where the libgirepository-2.0-dev package is not available
+            (e.g., Ubuntu 22.04), and you do not need the absolute latest features, you can try pinning 
+            the PyGObject version to 3.50.0 or earlier in your Python environment. 
+            This version does not require the newer girepository-2.0 dependency. 
+            You can install a specific version using pip:
+            
+            $ pip install PyGObject==3.50.0
+
 
 Crear el archivo de configuracion y modificarlo:
 

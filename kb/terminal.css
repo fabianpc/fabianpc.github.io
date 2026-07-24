@@ -1,0 +1,25 @@
+p.terminal {
+  margin: 10px;
+  padding: 10px;
+  background-color: black;
+  color: yellowgreen;
+}
+
+textarea {
+  all: revert;
+}
+
+p.terminal textarea {
+  width: 100%;
+  background-color: black;
+  color: yellow;
+  border: none;
+  resize: none;
+}
+
+hr {
+  border: 0;
+  height: 5px;
+  background-color: green;
+  margin: 20px 0;
+}
