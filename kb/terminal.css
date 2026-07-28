@@ -5,10 +5,6 @@ p.terminal {
   color: yellowgreen;
 }
 
-textarea {
-  all: revert;
-}
-
 p.terminal textarea {
   width: 100%;
   background-color: black;
@@ -17,9 +13,14 @@ p.terminal textarea {
   resize: none;
 }
 
+p.terminal span.mensaje {
+  color: brown;
+}
+
 hr {
   border: 0;
   height: 5px;
   background-color: green;
   margin: 20px 0;
 }
+
